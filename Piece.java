@@ -12,8 +12,11 @@ public abstract class Piece {
 		this.y = y;	
 	}
 	public abstract void setPath();
-	public void addPoint(int x, int y) {
-		path.add(new Point(x, y));
+	public void addPoint(String direction, int x, int y) {
+		path.add(new Point(direction, x, y));
+	}
+	public Point getPathIndex(int i) {
+		return path.get(i);
 	}
 	public ArrayList<Point> getPath(){
 		return path;

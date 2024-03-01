@@ -14,16 +14,16 @@ public class Rook extends Piece{
 	}	
 	public void setPath() {			
 		for(int i = 1; i < n; i++) {
-			addPoint(getX(), getY() - i);
+			addPoint("n", getX(), getY() - i);
 		}
 		for(int i = 1; i < s; i++) {
-			addPoint(getX(), getY() + i);
+			addPoint("s", getX(), getY() + i);
 		}
 		for(int i = 1; i < w; i++) {
-			addPoint(getX() - i, getY());
+			addPoint("w", getX() - i, getY());
 		}
 		for(int i = 1; i < e; i++) {
-			addPoint(getX() + i, getY());
+			addPoint("e", getX() + i, getY());
 		}
 	}		
 	public String toString() {
