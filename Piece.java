@@ -2,16 +2,17 @@ import java.util.ArrayList;
 public abstract class Piece {
 	private String name;
 	private boolean color;
-	private int y;
-	private int x;
+	private Point position;
 	private ArrayList<Point> path = new ArrayList<Point>();
 	public Piece(String name, boolean color, int x, int y) {
 		this.name = name;
 		this.color = color;
-		this.x = x;
-		this.y = y;	
+		position = new Point(x, y);	
 	}
 	public abstract void setPath();
+	public void addPoint(int x, int y) {
+		path.add(new Point(x, y));
+	}
 	public void addPoint(String direction, int x, int y) {
 		path.add(new Point(direction, x, y));
 	}
@@ -37,16 +38,18 @@ public abstract class Piece {
 		this.color = color;
 	}
 	public int getY() {
-		return y;
+		return position.getY();
 	}
 	public void setY(int y) {
-		this.y = y;
+		position.setY(y);
 	}
 	public int getX() {
-		return x;
-	}
+		return position.getX();
+	}	
 	public void setX(int x) {
-		this.x = x;
+		position.setX(x);
 	}
-	
+	public Point getPosition() {
+		return position;
+	}
 }
